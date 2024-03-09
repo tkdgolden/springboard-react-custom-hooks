@@ -5,7 +5,7 @@ import {v1 as uuid} from "uuid";
 
 function useAxios(baseUrl) {
     const [data, setData] = useState([]);
-    const makeRequest = async (append) => {
+    const makeRequest = async (append="") => {
         const response = await axios.get(baseUrl + append);
         setData(data => [...data, { ...response.data, id: uuid() }]);
     }
